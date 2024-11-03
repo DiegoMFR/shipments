@@ -27,6 +27,6 @@ import { useTemplateRef } from 'vue';
 const formRef = useTemplateRef('formRef');
 
 const submitForm = () => {
-  formRef.value.submitForm();
+  formRef.value?.submitForm();
 }
 </script>

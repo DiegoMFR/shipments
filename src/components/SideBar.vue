@@ -3,15 +3,16 @@
         <a href="#" title="Viya">
             <logoViya></logoViya>
         </a>
-        <button class="p-auto p-4 mt-4" title="Add...">
-            <iconAdd class="fill-main-it"></iconAdd>
+        <button class="p-auto p-4 mt-4 hover:bg-neutral2-it text-foreground-muted hover:text-main-it" title="Add...">
+            <i class="pi pi-plus-circle"></i>
         </button>
-        <nav class="p-4">
+        <nav>
             <ul>
-                <li v-for="item of navItems" class="shrink-0">
-                    <a href="#" class="inline-block p-4 center hover:bg-neutral2-it rounded shrink-0"
+                <li><Divider /></li>
+                <li v-for="item of navItems">
+                    <a href="#" class="inline-block p-4 center hover:bg-neutral2-it rounded shrink-0 mb-1"
                         :class="{ 'bg-neutral2-it': item.isActive }" :title="item.name">
-                        <component :is="item.icon" alt="item.name" :class="{ 'fill-main-it': item.isActive }" />
+                        <i class="pi" :class="[item.icon, item.isActive ? 'text-main-it' : 'text-foreground-muted']"></i>
                     </a>
                 </li>
             </ul>
@@ -20,20 +21,13 @@
 </template>
 <script setup lang="ts">
 import logoViya from '../assets/viya-logo.svg'
-import iconDashboard from '../assets/icon-dashboard.svg';
-import iconShipments from '../assets/icon-shipments.svg';
-import iconCarrier from '../assets/icon-carrier.svg';
-import iconTracking from '../assets/icon-track.svg';
-import iconContacts from '../assets/icon-contacts.svg';
-import iconSettings from '../assets/icon-settings.svg';
-import iconAdd from '../assets/icon-add.svg';
-
+import Divider from 'primevue/divider';
 const navItems = [
-    { name: 'Dashboard', icon: iconDashboard },
-    { name: 'Shipments', icon: iconShipments },
-    { name: 'Carriers', icon: iconCarrier, isActive: true },
-    { name: 'Tracking', icon: iconTracking },
-    { name: 'Contacts', icon: iconContacts },
-    { name: 'Settings', icon: iconSettings },
+    { name: 'Dashboard', icon: 'pi-objects-column' },
+    { name: 'Shipments', icon: 'pi-box' },
+    { name: 'Carriers', icon: 'pi-truck', isActive: true },
+    { name: 'Tracking', icon: 'pi-map-marker' },
+    { name: 'Contacts', icon: 'pi-address-book' },
+    { name: 'Settings', icon: 'pi-cog' },
 ]
 </script>

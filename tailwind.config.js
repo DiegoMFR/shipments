@@ -14,6 +14,7 @@ export default {
         'background-it': '#F9FAFB',
         'main-it': '#2392A4',
         'main-it-muted': '#F2FBFC',
+        'foreground-muted': '#54687D',
       },
     },
   },

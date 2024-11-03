@@ -11,14 +11,13 @@
         <div class="flex flex-row">
             <input class="bg-white p-2 w-64 rounded-md" type="text" placeholder="Quickly find what you need...">
             <button class="p-1 ml-4 text-sm flex items-center" title="User Person">
-                <div class="p-1 bg-neutral1-it rounded-md"><userIcon></userIcon></div>
+                <div class="p-1 bg-neutral1-it rounded-md"><i class="pi pi-user"></i></div>
                 <span class="ml-1">User person</span>
             </button>
         </div>
     </header>
 </template>
 <script setup lang="ts">
-import userIcon from '../assets/icon-user.svg'
 </script>
 <style scoped>
 .breadcrumbs {

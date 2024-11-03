@@ -108,7 +108,7 @@
     </Form>
 </template>
 <script setup lang="ts">
-import { Form, FormFieldState } from '@primevue/forms';
+import { Form } from '@primevue/forms';
 import Select from 'primevue/select';
 import InputText from 'primevue/inputtext';
 import RadioButton from 'primevue/radiobutton';
@@ -126,19 +126,8 @@ const { form, updateForm } = useFormStore();
 const initialValues = ref({ ...form });
 const submitBtnRef = useTemplateRef('submitBtn');
 
-interface FormObject extends FormFieldState{
-    modules: {
-        value: string[];
-    };
-    cancellation: { value: string[] };
-    integrations: { value: { name: string, code: string } };
-    label: { value: string };
-    pricing: { value: string };
-    reference: { value: string };
-}
 
-
-const onFormSubmit = ({ valid, states }: Record<string, FormObject>) => {
+const onFormSubmit = ({ valid, states }: Record<string, any>) => {
     if (valid) {
         const { cancellation, integrations, label, modules, pricing, reference } = states;
 
