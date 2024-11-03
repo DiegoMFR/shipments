@@ -1,0 +1,15 @@
+{
+    "integrations": {
+        "name": "ServerA",
+        "code": "A"
+    },
+    "label": "test",
+    "reference": "bbb",
+    "modules": [
+        "ordering"
+    ],
+    "pricing": "basic",
+    "cancellation": [
+        "sms"
+    ]
+}
